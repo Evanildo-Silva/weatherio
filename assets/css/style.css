@@ -288,6 +288,64 @@ body {
   display: none;
 }
 
+
+.card {
+  background-color: var(--surface);
+  color: var(--on-surface);
+}
+
+.card-lg {
+  border-radius: var(--radius-28);
+  padding: 20px;
+}
+
+.card-sm {
+  border-radius: var(--radius-16);
+  padding: 16px;
+}
+
+.heading {
+  color: var(--white);
+  font-size: var(--heading);
+  line-height: 1.1;
+}
+
+.title-1 {
+  font-size: var(--title-1);
+}
+
+.title-2 {
+  font-size: var(--title-2);
+  margin-block-end: 12px;
+}
+
+.title-3 {
+  font-size: var(--title-3);
+  font-weight: var(--weight-semiBold);
+}
+
+.body-1 {
+  font-size: var(--body-1);
+}
+
+.body-2 {
+  font-size: var(--body-2);
+  font-weight: var(--weight-semiBold);
+}
+
+.body-3 {
+  font-size: var(--body-3);
+}
+
+.label-1 {
+  font-size: var(--label-1);
+}
+
+.label-2 {
+  font-size: var(--label-2);
+}
+
+
 /*-----------------------------------*\
   #HEADER
 \*-----------------------------------*/
