@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>weatherio</title>
+    <meta name="title" content="weatherio">
+    <meta name="description" content="weatherio is weather made by Evanildo-Silva">
+
+    <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <script src="./assets/js/app.js" type="module"></script>
+    <script src="./assets/js/route.js" type="module"></script>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container">
+
+            <a href="#" class="logo">
+                <img src="./assets/images/logo.png" alt="logo" width="364" height="58">
+            </a>
+
+            <div class="search-view" data-search-view>
+
+                <div class="search-wrapper">
+
+                    <input class="search-field" type="search" name="search" placeholder="Pesquisar cidade..."
+                        autocomplete="off" data-search-field>
+
+                    <span class="m-icon">search</span>
+
+                    <button class="icon-btn leading-icon has-state" aria-label="close search" data-search-toggle>
+                        <span class="m-icon">arrow_back</span>
+                    </button>
+
+                </div>
+
+                <div class="search-result" data-search-result>
+                    <ul class="view-list">
+
+                        <li class="view-item">
+
+                            <span class="m-icon">location_on</span>
+
+                            <div>
+                                <p class="item-title">London</p>
+
+                                <p class="label-2 item-subtitle">City of london, GB</p>
+                            </div>
+
+                            <a href="" class="item-link has-state" data-search-toggle></a>
+
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="header-actions">
+
+                <button class="icon-btn has-state" aria-label="open search data-search-toggle">
+                    <span class="m-icon">search</span>
+                </button>
+
+                <a href="#/current-location" class="btn-primary has-state" data-curret-location-btn>
+                    <span class="m-icon">my_location</span>
+
+                    <span class="span">Meu Local</span>
+                </a>
+
+            </div>
+
+        </div>
+    </header>
+
+</body>
+
+</html>
