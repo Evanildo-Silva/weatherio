@@ -306,21 +306,17 @@ body {
   align-items: center;
 }
 
-
 .header .container {
   justify-content: space-between;
 }
-
 
 .header-actions {
   gap: 16px;
 }
 
-
 .header .btn-primary {
   padding-inline: 12px;
 }
-
 
 .search-view {
   position: fixed;
@@ -328,7 +324,7 @@ body {
   left: 0;
   width: 100%;
   height: 100vh;
-
+  /* unidade viewport pequena(svh) para dispositivos movéis */
   height: 100svh;
   background-color: var(--surface);
   color: var(--on-surface);
@@ -339,13 +335,11 @@ body {
   transition: clip-path 500ms ease;
 }
 
-
 .search-view.active {
   opacity: 1;
   visibility: visible;
   clip-path: circle(130% at 73% 5%);
 }
-
 
 .search-wrapper {
   position: relative;
@@ -434,6 +428,54 @@ body {
   position: absolute;
   inset: 0;
   box-shadow: none;
+}
+
+/*-----------------------------------*\
+  #MAIN
+\*-----------------------------------*/
+
+main {
+  height: calc(100vh - 80px);
+  height: calc(100svh - 80px);
+  overflow: hidden;
+}
+
+article.container {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 20px;
+  height: 100%;
+  overflow-y: overlay;
+  /* overflow-y: auto; para firefox */
+  overflow-y: auto;
+}
+
+article.container::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
+article.container:is(:hover, :focus-within)::-webkit-scrollbar-thumb {
+  background-color: var(--white-alpha-8);
+}
+
+article.container::-webkit-scrollbar-button {
+  height: 10px;
+}
+
+article.container::before {
+  content: "";
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  background-image: var(--gradient-1);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.section:not(:last-child) {
+  margin-block: 16px;
 }
 
 /*-----------------------------------*\
