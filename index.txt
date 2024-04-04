@@ -1,5 +1,5 @@
 weatherio
-weatherio is a weather app made by Evanildo-Ferr
+weatherio is a weather app made by Evanildo-Silva
 
 
 

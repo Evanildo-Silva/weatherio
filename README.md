@@ -42,7 +42,7 @@ Open with live server
 
 ## Authors
 
-- [@Evanildo-Ferr](https://github.com/Evanildo-Ferr)
+- [@Evanildo-Silva](https://github.com/Evanildo-Silva)
 
 ## License
 
