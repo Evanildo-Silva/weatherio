@@ -532,6 +532,7 @@ article.container::before {
   z-index: 1;
 }
 
+/* :not(:last-child) adicionar as propriedades a todos os filhos de section menos no último */
 .section:not(:last-child) {
   margin-block: 16px;
 }
@@ -540,9 +541,40 @@ article.container::before {
   #CURRENT WEATHER
 \*-----------------------------------*/
 
+.current-weather-card .wrapper-heading {
+  margin-block: 12px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
 
+.current-weather-card .weather-icon {
+  margin-inline: auto;
+}
 
+.current-weather-card>.body-3 {
+  text-transform: capitalize;
+}
 
+.current-weather-card .meta-list {
+  margin-block-start: 16px;
+  padding-block-start: 16px;
+  border-block-start: 1px solid var(--outline);
+}
+
+.current-weather-card .meta-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.current-weather-card .meta-item:not(:last-child) {
+  margin-block-end: 12px;
+}
+
+.current-weather-card .meta-text {
+  color: var(--on-surface-variant);
+}
 
 /*-----------------------------------*\
   #HIGHLIGHTS
