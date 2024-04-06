@@ -1095,3 +1095,10 @@ article.container::before {
   }
 
 }
+
+@media (min-width: 1400px) {
+
+  .highlight-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
