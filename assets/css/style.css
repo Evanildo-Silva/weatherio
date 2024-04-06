@@ -772,9 +772,27 @@ article.container::before {
   #LOADING
 \*-----------------------------------*/
 
+.loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--background);
+  display: none;
+  place-items: center;
+  z-index: 1;
+}
 
-
-
+.loading::before {
+  content: "";
+  width: 48px;
+  height: 48px;
+  border: 4px solid var(--on-background);
+  border-block-start-color: transparent;
+  border-radius: var(--radius-circle);
+  animation: loading 500ms linear infinite;
+}
 
 /*-----------------------------------*\
   #ERROR SECTION
