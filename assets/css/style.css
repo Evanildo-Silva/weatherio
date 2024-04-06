@@ -200,7 +200,6 @@ body {
   overflow: hidden;
 }
 
-
 /*-----------------------------------*\
   #REUSED STYLES IN THE APP
 \*-----------------------------------*/
@@ -288,7 +287,6 @@ body {
   display: none;
 }
 
-
 .card {
   background-color: var(--surface);
   color: var(--on-surface);
@@ -344,7 +342,6 @@ body {
 .label-2 {
   font-size: var(--label-2);
 }
-
 
 /*-----------------------------------*\
   #HEADER
@@ -525,6 +522,7 @@ article.container::before {
   content: "";
   position: fixed;
   bottom: 0;
+  left: 0;
   width: 100%;
   height: 40px;
   background-image: var(--gradient-1);
@@ -700,16 +698,47 @@ article.container::before {
   margin-block-end: 4px;
 }
 
-
-
 /*-----------------------------------*\
   #HOURLY FORECAST
 \*-----------------------------------*/
 
+.slider-container {
+  overflow-x: auto;
+  margin-inline: -16px;
+}
 
+.slider-container::-webkit-scrollbar {
+  display: none;
+}
 
+.slider-list {
+  display: flex;
+  gap: 12px;
+}
 
+.slider-list:first-child {
+  margin-block-end: 16px;
+}
 
+.slider-list::before,
+.slider-list::after {
+  content: "";
+  min-width: 4px;
+}
+
+.slider-item {
+  min-width: 110px;
+  flex: 1 1 100%;
+}
+
+.slider-card {
+  text-align: center;
+}
+
+.slider-card .weather-icon {
+  margin-inline: auto;
+  margin-block: 12px;
+}
 
 /*-----------------------------------*\
   #LOADING
