@@ -71,7 +71,7 @@ export const getTime = function (timeUnix, timezone) {
 
 export const mps_to_kmh = function (mps) {
     const mph = mps * 3600
-    returnmph / 1000
+    return mph / 1000
 }
 
 export const aqiText = {
