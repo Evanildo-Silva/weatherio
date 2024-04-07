@@ -33,7 +33,7 @@ export const url = {
     },
     /**
      * 
-     * @param {string} query Search query e.g: "Fortaleza", "Brasília"
+     * @param {string} query Search query e.g.: "Fortaleza", "Brasília"
      */
     geo(query) {
         return `https://api.openweathermap.org/geo/1.0/direct?q=${query}&limit=5`
