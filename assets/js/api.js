@@ -9,7 +9,6 @@
 
 const openWeatherApiKey = process.env.OPEN_WEATHER_API_KEY
 
-
 /**
  * Fetch data from server
  * @param {string} URL API url
@@ -22,12 +21,27 @@ export const fetchData = function (URL, callback) {
 }
 
 export const url = {
+    /**
+     * 
+     * @param {number} lat Latitude
+     * @param {number} lon Longitude
+     */
     currentWeather(lat, lon) {
         return `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric`
     },
+    /**
+     * 
+     * @param {number} lat Latitude
+     * @param {number} lon Longitude
+     */
     forecast(lat, lon) {
         return `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric`
     },
+    /**
+     * 
+     * @param {number} lat Latitude
+     * @param {number} lon Longitude
+     */
     airPollution(lat, lon) {
         return `https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}`
     },
@@ -38,6 +52,11 @@ export const url = {
     geo(query) {
         return `https://api.openweathermap.org/geo/1.0/direct?q=${query}&limit=5`
     },
+    /**
+     * 
+     * @param {number} lat Latitude
+     * @param {number} lon Longitude
+     */
     reverseGeo(lat, lon) {
         return `https://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}$limit=5`
     },
