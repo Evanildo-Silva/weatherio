@@ -7,7 +7,7 @@
 
 'use strict';
 
-const openWeatherApiKey = "12f0bc5202d0786b4cb326ee782cfdc7"
+const openWeatherApiKey = process.env.OPEN_WEATHER_API_KEY
 
 
 /**
