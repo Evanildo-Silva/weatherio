@@ -360,6 +360,85 @@ export const updateWeather = function (lat, lon) {
 
         })
 
+        fetchData(url.forecast(lat, lon), function (forecast) {
+
+            const {
+                list: forecastList,
+                city: {
+                    timezone
+                }
+            } = forecast
+
+            hourlySection.innerHTML = `
+                <h2 class="title-2">Hoje às</h2>
+
+                <div class="slider-container">
+
+                    <ul class="slider-list" data-temp></ul>
+
+                    <ul class="slider-list" data-wind></ul>
+
+                </div>
+            `
+
+            for (const [index, data] of forecastList.entries()) {
+
+                if (index > 7) break
+
+                const {
+                    dt: dataTimeUnix,
+                    main: {
+                        temp
+                    },
+                    weather,
+                    wind: {
+                        deg: windDirection,
+                        speed: windSpeed
+                    }
+                } = data
+
+                const [{ description, icon }] = weather
+
+                const temperatureItemList = document.createElement("li")
+                temperatureItemList.classList.add("slider-item")
+
+                temperatureItemList.innerHTML = `
+                    <div class="card card-sm slider-card">
+
+                        <p class="body-3">${module.getTime(dataTimeUnix, timezone)}</p>
+
+                        <img class="weather-icon" src="./assets/images/weather_icons/${icon}.png" width="48"
+                            height="48" loading="lazy" alt="${description}" title="${description}">
+
+                        <p class="body-3">${parseInt(temp)}&deg<sup>c</sup></p>
+
+                    </div>
+                `
+
+                hourlySection.querySelector("[data-temp]").appendChild(temperatureItemList)
+
+                const windItemlist = document.createElement("li")
+                windItemlist.classList.add("slider-item")
+
+                windItemlist.innerHTML = `
+                    <div class="card card-sm slider-card">
+                    
+                        <p class="body-3">${module.getTime(dataTimeUnix, timezone)}</p>
+                        
+                        <img class="weather-icon" src="./assets/images/weather_icons/direction.png"
+                        width="48" height="48" loading="lazy" alt="direção" style="transform: rotate(${windDirection - 180}deg)">
+                        
+                        <p class="body-3">${parseInt(module.mps_to_kmh(windSpeed))}<sub>km/h</sub></p>
+                    
+                    </div>
+                `
+
+                hourlySection.querySelector("[data-wind]").appendChild(windItemlist)
+
+            }
+
+        })
+
     })
 
 }
