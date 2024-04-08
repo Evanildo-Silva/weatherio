@@ -42,8 +42,8 @@ export const monthNames = [
 
 export const getDate = function (dateUnix, timezone) {
     const date = new Date((dateUnix + timezone) * 1000)
-    const weekDayNames = weekDayNames[date.getUTCDay()]
-    const monthNames = monthNames[date.getUTCMonth()]
+    const localWeekDay = weekDayNames[date.getUTCDay()]
+    const localMonth = monthNames[date.getUTCMonth()]
 
     return `${localWeekDay} ${date.getUTCDate().toString().padStart(2, '0')}, ${localMonth}`
 }
