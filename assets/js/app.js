@@ -106,9 +106,9 @@ const errorContent = document.querySelector("[data-error-content]")
  * @param {number} lon Longitude
  */
 export const updateWeather = function (lat, lon) {
-    // loading.style.display = "grid"
-    // container.style.overflowY = "hidden"
-    // container.classList.remove("fade-in")
+    loading.style.display = "grid"
+    container.style.overflowY = "hidden"
+    container.classList.remove("fade-in")
     errorContent.style.display = "none"
 
     const currentWeatherSection = document.querySelector("[data-current-weather]")
@@ -436,6 +436,59 @@ export const updateWeather = function (lat, lon) {
                 hourlySection.querySelector("[data-wind]").appendChild(windItemlist)
 
             }
+
+
+            forecastSection.innerHTML = `
+            <h2 class="title-2" id="forecast-label">Previsão de 5 dias</h2>
+
+            <div class="card card-lg forecast-card">
+            
+                <ul data-forecast-list></ul>
+
+            </div>
+            `
+
+            for (let i = 7, length = forecastList.length; i < length; i += 8) {
+                const {
+                    main: {
+                        temp_max
+                    },
+                    weather,
+                    dt_txt
+                } = forecastList[i]
+
+                const [{ description, icon }] = weather
+                const date = new Date(dt_txt)
+
+                const itemList = document.createElement("li")
+                itemList.classList.add("card-item")
+
+                itemList.innerHTML = `
+                <div class="icon-wrapper">
+
+                <img class="weather-icon" src="./assets/images/weather_icons/${icon}.png" width="36"
+                height="36" alt="${description}" title="${description}">
+                
+                <span class="span">
+                
+                <p class="title-2">${parseInt(temp_max)}&deg<sup>c</sup></p>
+                
+                </span>
+                
+                </div>
+                
+                <p class="label-1">${date.getDate()} ${module.monthNames[date.getUTCMonth()]}</p>
+                
+                <p class="label-1">${module.weekDayNames[date.getUTCDay()]}</p>
+                `
+
+                forecastSection.querySelector("[data-forecast-list]").appendChild(itemList)
+
+            }
+
+            loading.style.display = "none"
+            container.style.overflowY = "overlay"
+            container.classList.add("fade-in")
 
         })
 
