@@ -27,7 +27,7 @@ export const url = {
      * @param {number} lon Longitude
      */
     currentWeather(lat, lon) {
-        return `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric`
+        return `https://api.openweathermap.org/data/2.5/weather?${lat}&${lon}&units=metric`
     },
     /**
      * 
@@ -35,7 +35,7 @@ export const url = {
      * @param {number} lon Longitude
      */
     forecast(lat, lon) {
-        return `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric`
+        return `https://api.openweathermap.org/data/2.5/forecast?${lat}&${lon}&units=metric`
     },
     /**
      * 
@@ -43,7 +43,7 @@ export const url = {
      * @param {number} lon Longitude
      */
     airPollution(lat, lon) {
-        return `https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}`
+        return `https://api.openweathermap.org/data/2.5/air_pollution?${lat}&${lon}`
     },
     /**
      * 
@@ -58,6 +58,6 @@ export const url = {
      * @param {number} lon Longitude
      */
     reverseGeo(lat, lon) {
-        return `https://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}$limit=5`
+        return `https://api.openweathermap.org/geo/1.0/reverse?${lat}&${lon}&limit=5`
     },
 }
