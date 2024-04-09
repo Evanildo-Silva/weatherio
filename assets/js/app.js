@@ -365,7 +365,7 @@ export const updateWeather = function (lat, lon) {
             const {
                 list: forecastList,
                 city: {
-                    timezone
+                    timezone,
                 }
             } = forecast
 
@@ -448,7 +448,8 @@ export const updateWeather = function (lat, lon) {
             </div>
             `
 
-            for (let i = 7, length = forecastList.length; i < length; i += 8) {
+
+            for (let i = timezone < 0 ? 3 : 7, length = forecastList.length; i < length; i += 8) {
                 const {
                     main: {
                         temp_max
