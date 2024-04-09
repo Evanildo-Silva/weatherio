@@ -7,7 +7,8 @@
 
 'use strict';
 
-const openWeatherApiKey = process.env.OPEN_WEATHER_API_KEY
+const openWeatherApiKey = "47c4043e29dceb0ee24ea4b546fdb27b"
+// const openWeatherApiKey = process.env.OPEN_WEATHER_API_KEY
 
 /**
  * Fetch data from server
@@ -15,7 +16,7 @@ const openWeatherApiKey = process.env.OPEN_WEATHER_API_KEY
  * @param {Function} callback Callback function
  */
 export const fetchData = function (URL, callback) {
-    fetch(`${URL}&appid=${openWeatherApiKey}`)
+    fetch(`${URL}&appid=${openWeatherApiKey}&lang=pt_br`)
         .then(res => res.json())
         .then(data => callback(data))
 }
