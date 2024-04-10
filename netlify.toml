@@ -1,0 +1,4 @@
+[buil]
+    publish = "assets/"
+
+    functions = "serverless/"
