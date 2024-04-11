@@ -15,6 +15,7 @@
 export const fetchData = async function (URL, callback) {
     try {
         const response = await fetch("./.netlify/funtions/api", {
+            method: "GET",
             body: JSON.stringify({
                 URL,
                 callback
