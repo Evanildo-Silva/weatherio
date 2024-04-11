@@ -3,10 +3,10 @@ import fetch from "node-fetch";
 const { OPEN_WEATHER_API_KEY } = process.env
 
 exports.handler = async (event, context) => {
-    const { URL, callback } = JSON.parse(event.body)
+    const { URL } = event.queryStringParameters
 
     try {
-        if (!URL || !callback) {
+        if (!URL) {
             throw new Error("URL and callback are required parameters.");
         }
         const fetchData = await fetch(`${URL}&appid=${OPEN_WEATHER_API_KEY}&lang=pt_br`)

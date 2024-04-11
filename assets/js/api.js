@@ -14,14 +14,10 @@
  */
 export const fetchData = async function (URL, callback) {
     try {
-        const response = await fetch("./.netlify/funtions/api", {
-            body: JSON.stringify({
-                URL,
-                callback
-            })
-        })
+        const response = await fetch("./.netlify/funtions/api", + URL)
 
         const responseJson = await response.json()
+        callback(responseJson)
         return responseJson
 
     } catch (error) {
