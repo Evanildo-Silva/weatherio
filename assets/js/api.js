@@ -14,7 +14,10 @@
  */
 export const fetchData = async function (URL, callback) {
     try {
-        const response = await fetch("./.netlify/funtions/api", + URL)
+        const response = await fetch("./.netlify/funtions/api", {
+            method: "POST",
+            body: URL
+        })
 
         const responseJson = await response.json()
         callback(responseJson)
