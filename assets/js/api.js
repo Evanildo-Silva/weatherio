@@ -14,9 +14,12 @@
  */
 export const fetchData = async function (URL, callback) {
     try {
-        const response = await fetch("./.netlify/funtions/api", {
-            method: "POST",
-            body: URL
+        const response = await fetch(`./.netlify/funtions/api${URL}`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            },
+
         })
 
         const responseJson = await response.json()
@@ -24,7 +27,7 @@ export const fetchData = async function (URL, callback) {
         return responseJson
 
     } catch (error) {
-        console.error(error)
+        console.error(error.stack)
     }
 }
 
@@ -35,7 +38,7 @@ export const url = {
      * @param {number} lon Longitude
      */
     currentWeather(lat, lon) {
-        return `https://api.openweathermap.org/data/2.5/weather?${lat}&${lon}&units=metric`
+        return `/data/2.5/weather?${lat}&${lon}&units=metric`
     },
     /**
      * 
