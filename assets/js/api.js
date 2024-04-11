@@ -7,6 +7,29 @@
 
 'use strict';
 
+/**
+ * Fetch data from server
+ * @param {string} URL API url
+ * @param {Function} callback Callback function
+ */
+export const fetchData = async function (URL, callback) {
+    try {
+        const response = await fetch("./.netlify/funtions/api", {
+            method: "POST",
+            body: JSON.stringify({
+                URL,
+                callback
+            })
+        })
+
+        const responseJson = await response.json()
+        return responseJson
+
+    } catch (error) {
+        console.error(error)
+    }
+}
+
 export const url = {
     /**
      * 

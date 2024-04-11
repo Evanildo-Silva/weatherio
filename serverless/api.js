@@ -3,7 +3,7 @@ import fetch from "node-fetch";
 const { OPEN_WEATHER_API_KEY } = process.env
 
 exports.handler = async (event, context) => {
-    const { URL, callback } = event.queryStringParameters
+    const { URL, callback } = event.body
 
     try {
         if (!URL || !callback) {
