@@ -6,7 +6,7 @@
 
 'use strict'
 
-import { fetchData, url } from "./api.js"
+import { airPollution, currentWeather, forecast, reverseGeo } from "./dataWeather.js"
 import * as module from "./module.js"
 
 /**
@@ -56,7 +56,7 @@ searchField.addEventListener("input", function () {
 
     if (searchField.value) {
         searchTimeout = setTimeout(() => {
-            fetchData(url.geo(searchField.value), function (locations) {
+            geo(searchField.value, function (locations) {
                 searchField.classList.remove("searching")
                 searchResult.classList.add("active")
                 searchResult.innerHTML = `
@@ -127,7 +127,7 @@ export const updateWeather = function (lat, lon) {
         currentLocationBtn.removeAttribute("disabled")
     }
 
-    fetchData(url.currentWeather(lat, lon), function (currentWeather) {
+    currentWeather(lat, lon, function (currentWeather) {
 
         const {
             weather,
@@ -179,13 +179,13 @@ export const updateWeather = function (lat, lon) {
                 </li>
             </ul>
         `
-        fetchData(url.reverseGeo(lat, lon), function ([{ name, country }]) {
+        reverseGeo(lat, lon, function ([{ name, country }]) {
             card.querySelector("[data-location]").innerHTML = `${name}, ${country}`
         })
 
         currentWeatherSection.appendChild(card)
 
-        fetchData(url.airPollution(lat, lon), function (airPollution) {
+        airPollution(lat, lon, function (airPollution) {
 
             const [{
                 main: {
@@ -360,7 +360,7 @@ export const updateWeather = function (lat, lon) {
 
         })
 
-        fetchData(url.forecast(lat, lon), function (forecast) {
+        forecast(lat, lon, function (forecast) {
 
             const {
                 list: forecastList,
