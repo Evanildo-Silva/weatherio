@@ -1,11 +1,11 @@
 import fetch from "node-fetch"
 
-const { OPEN_WEATHER_API_KEY } = process.env
+const API_KEY = process.env.OPEN_WEATHER_API_KEY
 
 export async function handler(event, context) {
     try {
         const { query } = JSON.parse(event.body)
-        const url = `https://api.openweathermap.org/geo/1.0/direct?q=${query}&limit=5&appid=${OPEN_WEATHER_API_KEY}&lang=pt_br`
+        const url = `https://api.openweathermap.org/geo/1.0/direct?q=${query}&limit=5&appid=${API_KEY}&lang=pt_br`
 
         const response = await fetch(url)
 
