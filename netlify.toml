@@ -2,3 +2,7 @@
     publish = "assets/"
 
     functions = "serverless/"
+
+[functions]
+
+    node_bundler = "esbuild"
