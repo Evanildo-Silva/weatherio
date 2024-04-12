@@ -159,7 +159,7 @@ export const updateWeather = function (lat, lon) {
             <div class="wrapper-heading">
                 <p class="heading">${parseInt(temp)}&deg;<sup>c</sup></p>
 
-                <img class="weather-icon" width="64" height="64" src="./assets/images/weather_icons/${icon}.png"
+                <img class="weather-icon" width="64" height="64" src="./images/weather_icons/${icon}.png"
                     alt="${description}">
             </div>
 
@@ -407,7 +407,7 @@ export const updateWeather = function (lat, lon) {
 
                         <p class="body-3">${module.getTime(dataTimeUnix, timezone)}</p>
 
-                        <img class="weather-icon" src="./assets/images/weather_icons/${icon}.png" width="48"
+                        <img class="weather-icon" src="./images/weather_icons/${icon}.png" width="48"
                             height="48" loading="lazy" alt="${description}" title="${description}">
 
                         <p class="body-3">${parseInt(temp)}&deg<sup>c</sup></p>
@@ -425,7 +425,7 @@ export const updateWeather = function (lat, lon) {
                     
                         <p class="body-3">${module.getTime(dataTimeUnix, timezone)}</p>
                         
-                        <img class="weather-icon" src="./assets/images/weather_icons/direction.png"
+                        <img class="weather-icon" src="./images/weather_icons/direction.png"
                         width="48" height="48" loading="lazy" alt="direção" style="transform: rotate(${windDirection - 180}deg)">
                         
                         <p class="body-3">${parseInt(module.mps_to_kmh(windSpeed))}<sub>km/h</sub></p>
@@ -467,7 +467,7 @@ export const updateWeather = function (lat, lon) {
                 itemList.innerHTML = `
                 <div class="icon-wrapper">
 
-                <img class="weather-icon" src="./assets/images/weather_icons/${icon}.png" width="36"
+                <img class="weather-icon" src="./images/weather_icons/${icon}.png" width="36"
                 height="36" alt="${description}" title="${description}">
                 
                 <span class="span">
