@@ -24,7 +24,7 @@ export const currentWeather = async function (lat, lon, callback) {
 
 export const reverseGeo = async function (lat, lon, callback) {
     try {
-        const response = await fetch(`./.netlify/functions/reserse_geo`, {
+        const response = await fetch(`./.netlify/functions/reverse_geo`, {
             method: "POST",
             headers: {
                 "Content-type": "application/json"
