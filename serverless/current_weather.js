@@ -1,4 +1,4 @@
-import fetch from "node-fetch";
+const fetch = require("node-fetch");
 
 const { OPEN_WEATHER_API_KEY } = process.env;
 
@@ -7,7 +7,7 @@ exports.handler = async function (event, context) {
         const { lat, lon } = event.body;
         const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${OPEN_WEATHER_API_KEY}&lang=pt_br`;
 
-        const response = await fetch(url);
+        const response = JSON.parse(event.body);;
 
         if (!response.ok) {
             throw new Error(`Erro na requisição: ${response.status} ${response.statusText}`);

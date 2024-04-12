@@ -5,10 +5,10 @@ export const currentWeather = async function (lat, lon, callback) {
             headers: {
                 "Content-type": "application/json"
             },
-            body: {
+            body: JSON.stringify({
                 lat,
                 lon,
-            }
+            })
         });
 
         if (!response.ok) {
@@ -29,10 +29,10 @@ export const reverseGeo = async function (lat, lon, callback) {
             headers: {
                 "Content-type": "application/json"
             },
-            body: {
+            body: JSON.stringify({
                 lat,
                 lon,
-            }
+            })
         });
 
         if (!response.ok) {
@@ -53,10 +53,10 @@ export const airPollution = async function (lat, lon, callback) {
             headers: {
                 "Content-type": "application/json"
             },
-            body: {
+            body: JSON.stringify({
                 lat,
                 lon,
-            }
+            })
         });
 
         if (!response.ok) {
@@ -77,10 +77,10 @@ export const forecast = async function (lat, lon, callback) {
             headers: {
                 "Content-type": "application/json"
             },
-            body: {
+            body: JSON.stringify({
                 lat,
                 lon,
-            }
+            })
         });
 
         if (!response.ok) {
@@ -101,9 +101,9 @@ export const geo = async function (query, callback) {
             headers: {
                 "Content-type": "application/json"
             },
-            body: {
+            body: JSON.stringify({
                 query
-            }
+            })
         });
 
         if (!response.ok) {

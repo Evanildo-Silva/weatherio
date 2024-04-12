@@ -6,7 +6,7 @@
 
 'use strict'
 
-import { airPollution, currentWeather, forecast, reverseGeo } from "./dataWeather.js"
+import { airPollution, currentWeather, forecast, geo, reverseGeo } from "./dataWeather.js"
 import * as module from "./module.js"
 
 /**

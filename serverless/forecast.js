@@ -1,10 +1,10 @@
-import fetch from "node-fetch";
+const fetch = require("node-fetch");
 
 const { OPEN_WEATHER_API_KEY } = process.env;
 
 exports.handler = async function (event, context) {
     try {
-        const { lat, lon } = event.body;
+        const { lat, lon } = JSON.parse(event.body);;
         const url = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=${OPEN_WEATHER_API_KEY}&lang=pt_br`;
 
         const response = await fetch(url);
