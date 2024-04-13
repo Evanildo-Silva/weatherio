@@ -449,7 +449,7 @@ export const updateWeather = function (lat, lon) {
             `
 
 
-            for (let i = timezone < 0 ? 3 : 7, length = forecastList.length; i < length; i += 8) {
+            for (let i = 7, length = forecastList.length; i < length; i += 8) {
                 const {
                     main: {
                         temp_max
@@ -460,6 +460,9 @@ export const updateWeather = function (lat, lon) {
 
                 const [{ description, icon }] = weather
                 const date = new Date(dt_txt)
+                const dateFormattedTimezone = new Date(dt_txt);
+
+                dateFormattedTimezone.setUTCHours(date.getUTCHours() + (timezone / 3600));
 
                 const itemList = document.createElement("li")
                 itemList.classList.add("card-item")
@@ -478,9 +481,9 @@ export const updateWeather = function (lat, lon) {
                 
                 </div>
                 
-                <p class="label-1">${date.getDate()} ${module.monthNames[date.getUTCMonth()]}</p>
+                <p class="label-1">${dateFormattedTimezone.getDate()} ${module.monthNames[dateFormattedTimezone.getUTCMonth()]}</p>
                 
-                <p class="label-1">${module.weekDayNames[date.getUTCDay()]}</p>
+                <p class="label-1">${module.weekDayNames[dateFormattedTimezone.getUTCDay()]}</p>
                 `
 
                 forecastSection.querySelector("[data-forecast-list]").appendChild(itemList)
