@@ -462,7 +462,7 @@ export const updateWeather = function (lat, lon) {
                 const date = new Date(dt_txt)
                 const dateFormattedTimezone = new Date(dt_txt);
 
-                dateFormattedTimezone.setUTCHours(date.getUTCHours() + (timezone / 3600));
+                dateFormattedTimezone.setUTCHours(date.getUTCHours() + 3);
 
                 const itemList = document.createElement("li")
                 itemList.classList.add("card-item")
