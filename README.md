@@ -1,6 +1,6 @@
 # Weatherio
 
-![project-image](/screenshorts/project-image.png)
+![project-image](/readme-images/project-image.png)
 
 O **Weatherio** é um site que fornece informações meteorológicas detalhadas para cidades em todo o mundo. Ele foi desenvolvido usando _HTML, CSS e JavaScript_, e consome dados de uma API pública, especificamente a OpenWeatherMap. O site é hospedado na plataforma Netlify usando serverless functions.
 
@@ -77,7 +77,7 @@ O **Weatherio** é um site que fornece informações meteorológicas detalhadas 
   <tr>
       <td align="center">
         <a href="https://openweathermap.org/">
-          <img src="./screenshorts/openweatherlogo.png" width="100px;" height="32px;" alt="logo openweathermap"/>
+          <img src="./readme-images/openweatherlogo.png" width="100px;" height="32px;" alt="logo openweathermap"/>
           <br />
           <sub>
             <b>OpenWeathermap</b>
@@ -95,7 +95,7 @@ O **Weatherio** é um site que fornece informações meteorológicas detalhadas 
     </td>
     <td align="center">
       <a href="https://www.netlify.com/blog/intro-to-serverless-functions/">
-        <img src="./screenshorts/netlify.svg" width="30px;" alt="logo css 3"/>
+        <img src="./readme-images/netlify.svg" width="30px;" alt="logo css 3"/>
         <br />
         <sub>
           <b>Serverless</b>
@@ -142,19 +142,19 @@ The project is organized into multiple files for better code organization and se
 
 ### Iphone 14 pro max
 
-![App mobile Screenshot](./screenshorts/iphone-14-pro.png)
+![App mobile Screenshot](./readme-images/iphone-14-pro.png)
 
 ### Ipad pro
 
-![App ipad Screenshot](./screenshorts/ipad-pro.png)
+![App ipad Screenshot](./readme-images/ipad-pro.png)
 
 ### Mobile
 
-![gif mobile](./screenshorts/mobile.gif)
+![gif mobile](./readme-images/mobile.gif)
 
 ### Desk
 
-![gif mobile](./screenshorts/desk.gif)
+![gif mobile](./readme-images/desk.gif)
 
 ## Requisitos para Rodar o Projeto Localmente
 
