@@ -2,7 +2,7 @@
 
 ![project-image](/readme-images/project-image.png)
 
-O **Weatherio** é um site que fornece informações meteorológicas detalhadas para cidades em todo o mundo. Ele foi desenvolvido usando _HTML, CSS e JavaScript_, e consome dados de uma API pública, especificamente a OpenWeatherMap. O site é hospedado na plataforma Netlify usando serverless functions.
+O **Weatherio** é um site que fornece informações meteorológicas detalhadas para cidades em todo o mundo. Ele foi desenvolvido usando _HTML, CSS e Javascript_, e consome dados de uma API pública, especificamente a OpenWeatherMap. O site é hospedado na plataforma Netlify usando serverless functions.
 
 ## Table of Contents
 
