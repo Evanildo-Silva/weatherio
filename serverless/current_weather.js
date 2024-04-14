@@ -1,3 +1,12 @@
+/**
+ * @license MIT
+ * @fileoverview Menage all routes
+ * @copyright Evanildo-Silva 2024 All rights reserved
+ * @author Evanildo-Silva <evanildo.sf91@gmail.com>
+ */
+
+'use strict'
+
 import fetch from "node-fetch"
 
 const API_KEY = process.env.OPEN_WEATHER_API_KEY
